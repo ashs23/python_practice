@@ -1,0 +1,126 @@
+1. Write a Python program which accepts the radius of a circle from the user and compute the area
+import math
+print("to find the area of the circle\n\n")
+r= float(input("enter the radius of the circle"))
+a= math.pi*r**2
+print("area of the circle= ",a)
+
+to find the area of the circle
+enter the radius of the circle3
+area of the circle=  28.274333882308138
+
+2.Write a Python Program to accept the details of a student like name, roll,number and mark and display it.
+print("Enter the details of the students\n")
+name=str(input("enter the name: \t"))
+roll=int(input("enter the roll number:\t"))
+mark=int(input("enter the marks:\t"))
+print("\nSTUDENT DETAILS\n")
+print("Name:\t",name)
+print("Roll No:",roll)
+print("Mark:\t",mark)
+
+Enter the details of the students
+
+enter the name: 	Alan
+enter the roll number:	11
+enter the marks:	46
+
+STUDENT DETAILS
+
+Name:	 Alan
+Roll No: 11
+Mark:	 46
+
+
+3. Write a Python program to get the largest number from a list.
+def get_largest_number(numbers):
+    if not numbers:
+        return None
+
+    largest = numbers[0]
+    for num in numbers[1:]:
+        if num > largest:
+            largest = num
+
+    return largest
+print("Enter a list of numbers:")
+numbers = []
+while True:
+    user_input = input()
+    if user_input.strip() == "":
+        break
+    numbers.append(int(user_input))
+
+largest_number = get_largest_number(numbers)
+
+if largest_number is None:
+    print("The list is empty.")
+else:
+    print(f"The largest number in the list is: {largest_number}")
+
+Enter a list of numbers:
+5
+89
+34
+62
+71
+
+The largest number in the list is: 89
+
+
+
+4. Given a range of first 10 numbers, write a Python program to iterate from start number to the end number and print the sum of the current number and previous number.
+start = 1
+end = 10
+
+previous_number = 0
+for current_number in range(start, end + 1):
+    print(f"Current number: {current_number}, Previous number: {previous_number}, Sum: {current_number + previous_number}")
+    previous_number = current_number
+
+Current number: 1, Previous number: 0, Sum: 1
+Current number: 2, Previous number: 1, Sum: 3
+Current number: 3, Previous number: 2, Sum: 5
+Current number: 4, Previous number: 3, Sum: 7
+Current number: 5, Previous number: 4, Sum: 9
+Current number: 6, Previous number: 5, Sum: 11
+Current number: 7, Previous number: 6, Sum: 13
+Current number: 8, Previous number: 7, Sum: 15
+Current number: 9, Previous number: 8, Sum: 17
+Current number: 10, Previous number: 9, Sum: 19
+
+
+
+5. Write a Python program to print only those numbers which are divisible of 5.
+print("Enter a list of numbers separated by spaces:")
+user_input = input()
+
+numbers = user_input.split(",")
+
+for number in numbers:
+    if int(number.strip()) % 5 == 0:
+        print(number.strip())
+Enter a list of numbers separated by spaces:
+25,96,75,46,85
+25
+75
+85
+
+
+6. Write a Python program to check whether a number is prime or not
+def is_prime(number):
+    if number <= 1:
+        return False
+
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+    return True
+
+num = int(input("Enter a number: "))
+
+if is_prime(num):
+    print(num, "is a prime number.")
+else:
+    print(num, "is not a prime number.")
+
